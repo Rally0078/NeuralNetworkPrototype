@@ -17,7 +17,7 @@ std::pair<double, double> GradientDescentIntercept(Functor functor1, double init
     std::pair<std::valarray<double>, std::valarray<double>> grad = functor1(intercept, slope);
 
     long iterCount = 0;
-    while (iterCount < iterations && (std::abs(grad.first[0]) >= 1e-6 && std::abs(grad.second[0]) >= 1e-6) )
+    while (iterCount < iterations && (std::abs(grad.first[0] * learningRate) >= 1e-6 && std::abs(grad.second[0] * learningRate) >= 1e-6) )
     {
         std::cout << ++iterCount;
         std::cout << ": Intercept = " << intercept[0] << ", Slope = " << slope[0] << std::endl;

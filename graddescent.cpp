@@ -52,9 +52,10 @@ int main(void)
     plot.drawCurve(x, line(result.second, result.first, x)).lineWidth(2).label("Best line of fit");
     Vec X = {0.5, 2.3, 2.9};
     Vec Y = {1.4, 1.9, 3.2};
-    plot.drawPoints(X,Y).pointType(0).pointSize(12).label("Data points");
+    plot.drawPoints(X,Y).pointType('x').pointSize(2).label("Data points");
     Figure fig = {{plot}};
     Canvas canvas = {{fig}};
+    canvas.size(720, 480);
     canvas.show();
     return 0;
 }

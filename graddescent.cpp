@@ -4,20 +4,14 @@
 #include <map>
 #include <sciplot/sciplot.hpp>
 
-/*std::valarray<double> residue(std::valarray<double> x)
-{
-    return (std::pow((1.4 - (x + 0.64 * 0.5)), 2) + std::pow((1.9 - (x + 0.64 * 2.3)), 2)+ std::pow((3.2 - (x + 0.64 * 2.9)), 2));
-}
-
-std::valarray<double> derivative_residue(std::valarray<double> x)
-{
-    return
-}*/
 int main(void)
 {
     std::map<double, double> heightWeight = {{0.5, 1.4},{2.3, 1.9}, {2.9, 3.2}};
     auto residue = [](std::valarray<double> input){
         return (std::pow((1.4 - (input + 0.64 * 0.5)), 2) + std::pow((1.9 - (input + 0.64 * 2.3)), 2)+ std::pow((3.2 - (input + 0.64 * 2.9)), 2));
+    };
+    auto derivative = [](std::valarray<double> input){
+        return (-2 * ( (1.94 - (input + 0.64 * 0.5)) + (1.9 - (input + 0.64 * 2.3)) + (3.2 - (input + 0.64 * 2.9))));
     };
     sciplot::Vec x = sciplot::linspace(0,3,100);
     sciplot::Plot2D plot1;

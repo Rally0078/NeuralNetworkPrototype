@@ -7,7 +7,7 @@
 using namespace sciplot;
 
 template <typename Functor>
-std::pair<double, double> GradientDescentIntercept(Functor functor1, double initIntercept = 0.0, double initSlope = 1.0)
+std::pair<double, double> GradientDescent(Functor functor1, double initIntercept = 0.0, double initSlope = 1.0)
 {
     double learningRate = 0.01;
     long iterations = 100000l;
@@ -42,7 +42,7 @@ int main(void)
     };
     Vec x = linspace(0,3.2,100);
     
-    std::pair<double, double> result = GradientDescentIntercept(gradient);
+    std::pair<double, double> result = GradientDescent(gradient);
     std::cout << "Gradient descent intercept = " << result.first <<" slope = " << result.second ;
     auto line = [](double a, double b, std::valarray<double> x){
         return a*x+b;

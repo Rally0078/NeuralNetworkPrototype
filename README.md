@@ -5,3 +5,9 @@
 <ul>
 <li>(For graph plotting) gnuplot, <a href='https://github.com/sciplot/sciplot'>sciplot</a></li>
 </ul>
+
+<h3>Todo</h3>
+<ul>
+   <li>Documentation</li>
+   <li>Proper libraries to handle vectors(Eigen, GSL, etc,)</li>
+</ul>
